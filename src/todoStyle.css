@@ -1,0 +1,99 @@
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  max-width: 460px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 28px 32px 20px;
+}
+
+/* Filter radio group */
+.ant-radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* Text input */
+input[name="inputTitle"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafafa;
+  margin-bottom: 14px;
+}
+
+input[name="inputTitle"]::placeholder {
+  color: #b0b0b0;
+}
+
+input[name="inputTitle"]:focus {
+  border-color: #597ef7;
+  box-shadow: 0 0 0 3px rgba(89, 126, 247, 0.12);
+  background: #fff;
+}
+
+/* Todo item row */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background 0.15s;
+}
+
+.item:hover {
+  background: #f5f7ff;
+}
+
+/* Checkbox */
+.item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #597ef7;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Todo title */
+.item span {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #333;
+  transition: color 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Close icon */
+.item .anticon-close {
+  font-size: 13px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.item .anticon-close:hover {
+  color: #ff4d4f;
+  transform: scale(1.2);
+}
