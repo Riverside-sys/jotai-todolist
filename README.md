@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Jotai Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个基于 React 和 [Jotai](https://jotai.org/) 状态管理库构建的简单待办事项（Todo List）应用。项目使用了 Vite 作为构建工具，并集成了 Ant Design (antd) UI 组件库。
 
-Currently, two official plugins are available:
+## 项目特点
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **轻量级状态管理**：使用 Jotai 进行原子化的状态管理，简单高效。
+- **响应式设计**：基于 Ant Design 组件库，提供美观且响应迅速的用户界面。
+- **TypeScript 支持**：全量使用 TypeScript，提供更好的开发体验和代码健壮性。
+- **动画效果**：集成 `@react-spring/web` 实现流畅的交互动画。
+- **开发工具**：集成了 `jotai-devtools`，方便在开发过程中调试状态。
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **框架**: React 19
+- **状态管理**: Jotai
+- **构建工具**: Vite
+- **UI 组件库**: Ant Design (antd)
+- **动画**: react-spring
+- **语言**: TypeScript
 
-## Expanding the ESLint configuration
+## 快速开始
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. 安装依赖
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+推荐使用 `pnpm` 安装依赖：
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+或者使用 `npm` / `yarn`:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# 或
+yarn install
 ```
+
+### 2. 启动开发服务器
+
+```bash
+pnpm dev
+```
+
+启动后，访问浏览器控制台输出的地址（通常是 `http://localhost:5173`）即可查看应用。
+
+### 3. 构建生产版本
+
+```bash
+pnpm build
+```
+
+构建产物将生成在 `dist` 目录中。
+
+## 项目结构
+
+- `src/common/store`: 存放 Jotai 的 atoms（状态定义）。
+- `src/components`: 存放业务组件（如 TodoItem, Todolist, Filter 等）。
+- `src/App.tsx`: 应用主入口组件。
+- `src/main.tsx`: 项目渲染入口。
